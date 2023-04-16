@@ -1,0 +1,52 @@
+{% load static %}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="{%static 'main/css/login.css'%}" >
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
+
+    <title>Login</title>
+  </head>
+
+
+
+<body>
+
+  <section>
+    <div class="Title"> <h1>Sandtale</h1> </div>
+    <div class="form-box">
+      <div class="form-value" id="#formid">
+        <form class='form' id="'tg" action='main'>
+          <h2>Login</h2>
+          <div class="inputbox" id="inp">
+            <input class="js-input input-email" type="text" placeholder="Email">
+          </div>
+          <div class="inputbox" id="inp">
+            <input class="js-input input-password" type="password" placeholder="Password">
+          </div>
+          <button class="log-in">Log in</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+<script src="{%static 'main/js/login.js'%}"> </script>
+
+<script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+
+<!-- <script src="js/sender.js"> </script> -->
+
+</body>
+
+</html>
+
