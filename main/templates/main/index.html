@@ -26,15 +26,13 @@
     <div class="Title"> <h1>Sandtale</h1> </div>
     <div class="form-box">
       <div class="form-value" id="#formid">
-        <form class='form' id="'tg" action='main'>
+        <form class='form' id="'tg"  method="post">
+          {% csrf_token %}
           <h2>Login</h2>
-          <div class="inputbox" id="inp">
-            <input class="js-input input-email" type="text" placeholder="Email">
-          </div>
-          <div class="inputbox" id="inp">
-            <input class="js-input input-password" type="password" placeholder="Password">
-          </div>
-          <button class="log-in">Log in</button>
+          
+          {{form.as_p}}
+          
+          <button class="log-in" type="submit">Log in</button>
         </form>
       </div>
     </div>
