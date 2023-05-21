@@ -18,15 +18,28 @@ def index(request):
     #     bound_form = MainForm()
     
     if request.method == 'POST':
+        email = request.POST['email']
         form = MainForm(request.POST)
-        # if form.is_valid():
-        form.save()
-        print(form.cleaned_data)
-        return redirect("/main")
+        if validateEmail(email):
+            form.save()
+            print(form.cleaned_data)
+            return redirect("/main")
     
     else:
         form = MainForm()
     return (render(request, 'main/index.html', {'form': form}))
+
+def validateEmail( email ):
+
+    # СДЕЛАТЬ ЧЕРЕЗ РЕГ ВЫРАЖЕНИЯ, СООБЩЕНИЕ ОБ ОШИБКЕ
+
+    from django.core.validators import validate_email
+    from django.core.exceptions import ValidationError
+    try:
+        validate_email( email )
+        return True
+    except ValidationError:
+        return False
 
 
 def main(request):
