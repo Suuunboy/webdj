@@ -33,32 +33,18 @@
     <div class="Title"> <h1>Sandtale</h1> </div>
     <div class="form-box">
       <div class="form-value" id="#formid">
-        <form class='form' id="'tg"  method="POST" action="">
-          <h2>Sign up</h2>
+        <form class='form' id="'tg"  method="POST">
           {% csrf_token %}
-          
-          {{form.username.label}}
-          {{form.username}}
+          <h2>Login</h2>
+          <div>
+            <input type="text" name="username" placeholder="Username" class="form-control">
+          </div>
+          <div>
+            <input type="password" name="password" placeholder="Password" class="form-control">
+          </div>
 
-          {{form.email.label}}
-          {{form.email}}
-
-          {{form.password1.label}}
-          {{form.password1}}
-
-          {{form.password2.label}}
-          {{form.password2}}
-          <input type="submit" name="Create User">
-          {% comment %} <button class="log-in" type="submit">Sign up</button> {% endcomment %}
-          
-
+          <button class="log-in" type="submit">Log in</button>
         </form>
-
-        {{form.errors}}
-
-        <a href="login"><button class="logButton">
-          Log in
-        </button></a>
       </div>
     </div>
   </section>

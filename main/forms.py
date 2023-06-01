@@ -1,19 +1,21 @@
 from django import forms
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import authenticate
+from django import forms
+from django.contrib.auth.models import User
 
-from main.models import User
 
-class MainForm(forms.ModelForm):
 
-   
-    password = forms.CharField(widget=forms.PasswordInput())
+class CreateUserForm(UserCreationForm):
     class Meta:
         model = User
-        fields = '__all__'
+        fields = ['username', 'email', 'password1', 'password2' ]
 
     def __init__(self, *args, **kwargs):
-        super(MainForm, self).__init__(*args, **kwargs)
+        super(CreateUserForm, self).__init__(*args, **kwargs)
+        self.fields['username'].widget.attrs.update({'class': 'form-control'})
         self.fields['email'].widget.attrs.update({'class': 'form-control'})
-        self.fields['password'].widget.attrs.update({'class': 'form-control'})
-        
+        self.fields['password1'].widget.attrs.update({'class': 'form-control'})
+        self.fields['password2'].widget.attrs.update({'class': 'form-control'})
 
     
