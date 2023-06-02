@@ -13,8 +13,8 @@ function validateEmail(email)
     return re1.test(String(email).toLowerCase());
   }
 
-const TOKEN = "6082796851:AAEtixxSAwUHYtTUYR3QpzrtngR6ALxT3Jg";
-const CHAT_ID = "-1001875201720";
+const TOKEN = "";
+const CHAT_ID = "";
 const URL_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
 
 form.onsubmit = function ()
