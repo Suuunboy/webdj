@@ -47,24 +47,25 @@
   </div> {% endcomment %}
   <body>
     <header>
-        <div class="logo"><a href="main.html"><img src="img/logo.png" alt="Alt"></a></div>
+        <div class="logo"><a href="/main"><img src="{%static 'main/img/logo.png'%}" alt="Alt"></a></div>
           <nav class="nav-bar">
             <ul>
-              <li>
+              {% comment %} <li>
                 <a href="about_us.html"><button class="aboutUs-button">About us</button></a>
-              </li>
-              <li >
+              </li> {% endcomment %}
+              {% comment %} <li >
                 <div class="profile-pic"><a href="profile.html" id="profile-pic"><img src="{%static 'main/img/icons8-гость-мужчина-24.png'%}" height="24" width="24"></a></div>
-              </li>
+              </li> {% endcomment %}
             </ul>
           </nav>
         </header>
 
         <main>
         <div class="dreamInfo">
+          {% for obj in qs %}
             <h1 align="center"> {{obj.title}} </h1>     
           <div class="dreamDiscript">
-            <p> <img src="img/horror-thumbnail.jpg" width="500" height="300" alt="Иллюстрация" align="right"  vspace="5" hspace="5">Мне опять снился сон….Этот сон…..Каждую ночь одно и тоже. На утро, как обычно, все забудется. Может быть, оно и к лучшему…..
+            <p> <img src="{%static 'main/img/horror-thumbnail.jpg'%}" width="500" height="300" alt="Иллюстрация" align="right"  vspace="5" hspace="5">Мне опять снился сон….Этот сон…..Каждую ночь одно и тоже. На утро, как обычно, все забудется. Может быть, оно и к лучшему…..
               Останутся только воспоминания о приоткрытых, словно приглашающих, куда-то воротах, рядом с которыми в камне застыли два пионера. А еще странная девочка….Которая постоянно спрашивает;
               - Ты пойдешь со мной?
               - Пойду? Но куда? И зачем? Да и где я вообще нахожусь?
@@ -80,8 +81,8 @@
               - Да я пойду с тобой – Каждый раз так сложно решить, что же ответить. Где я, что я здесь делаю, кто она такая? И почему от ответа на этот вопрос зависит так много в моей жизни? Или не зависит? Ведь это просто сон…Просто сон…"</p>
           </div>
           <div class="row">
-            {% for obj in qs %}
-            <p>{{obj.title}}
+            {% comment %} {% for obj in qs %} {% endcomment %}
+            {% comment %} <p>{{obj.title}} {% endcomment %}
                 <form action="{%url 'like-post-view'%}" method="POST", class='like-form', id='{{obj.id}}'>
                     {% csrf_token %}
                     <input type="hidden" name='post_id' value={{obj.id}}>
