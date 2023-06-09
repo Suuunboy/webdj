@@ -54,6 +54,10 @@ def main(request):
 def about_us(request):
     return render(request, 'main/about_us.html')
 
+def profile(request):
+    user = request.user
+    return render(request, 'main/profile.html', {'user': user})
+
 def someview(request):
    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 

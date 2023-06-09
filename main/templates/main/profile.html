@@ -1,0 +1,87 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+	  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Profile</title>
+    <link rel="stylesheet" href="{%static 'main/css/profile.css'%}">
+
+    <script src="{%static 'main/js/libs/gsap.min.js'%}" defer></script>
+	  <script src="{%static 'main/js/libs/Draggable.min.js'%}" defer></script>
+	  <script src="{%static 'main/js/libs/InertiaPlugin.min.js'%}" defer></script>
+	  <script src="{%static 'main/js/app.js'%}" defer></script>
+
+
+  </head>
+  <body>
+    <header>
+      <div class="logo"><a href="/main"><img src="{%static 'main/img/logo.png'%}" alt="Alt"></a></div>
+        <nav class="nav-bar">
+          <ul>
+            <li>
+              <a href="/main/about_us"><button class="aboutUs-button">About us</button></a>
+            </li>
+            <li>
+                <h1>  {{user}} </h1>
+            </li> 
+            <li >
+              <div class="profile-pic"><a href="" id="profile-pic"><img src="{%static 'main/img/icons8-гость-мужчина-24.png'%}" height="24" width="24"></a></div>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <div class="background-div">
+        <h1 class="background-logo">The Sandtale</h1>
+      </div>
+
+    <div class="dreams">
+        <div class="dream1">
+            <div class="thumbnail">
+              <a href="/main/post/"><img src="{%static 'main/img/dreams/dream1.jpg'%}"> </a>
+            </div>
+            <div class="details">
+              <div class="author">
+                 <a href=""> <img src="{%static 'main/img/he.jpg'%}"> </a>
+              </div>
+              <div class="title">
+                <h3>Dream 1</h3>
+                <p> Schizo </p>
+                <span> 10 years ago </span>
+              </div>
+            </div>
+          </div>
+      {% comment %} <div class="dreams__item"><img src="{%static 'main/img/dreams/dream1.jpg'%}" alt="Alt"></div>
+      <div class="dreams__item"><img src="{%static 'main/img/dreams/dream2.jpg'%}" alt="Alt"></div>
+      <div class="dreams__item"><img src="{%static 'main/img/dreams/dream3.jpg'%}" alt="Alt"></div>
+      <div class="dreams__item"><img src="{%static 'main/img/dreams/dream4.jpg'%}" alt="Alt"></div>
+      <div class="dreams__item"><img src="{%static 'main/img/dreams/dream5.jpg'%}" alt="Alt"></div>
+      <div class="dreams__item"><img src="{%static 'main/img/dreams/dream6.jpg'%}" alt="Alt"></div>
+
+      <div class="dreams__item"><img src="{%static 'main/img/dreams/dream1.jpg'%}" alt="Alt"></div>
+      <div class="dreams__item"><img src="{%static 'main/img/dreams/dream2.jpg'%}" alt="Alt"></div>
+      <div class="dreams__item"><img src="{%static 'main/img/dreams/dream3.jpg'%}" alt="Alt"></div>
+      <div class="dreams__item"><img src="{%static 'main/img/dreams/dream4.jpg'%}" alt="Alt"></div>
+      <div class="dreams__item"><img src="{%static 'main/img/dreams/dream5.jpg'%}" alt="Alt"></div>
+      <div class="dreams__item"><img src="{%static 'main/img/dreams/dream6.jpg'%}" alt="Alt"></div>
+
+      <div class="dreams__item"><img src="{%static 'main/img/dreams/dream1.jpg'%}" alt="Alt"></div>
+      <div class="dreams__item"><img src="{%static 'main/img/dreams/dream2.jpg'%}" alt="Alt"></div>
+      <div class="dreams__item"><img src="{%static 'main/img/dreams/dream3.jpg'%}" alt="Alt"></div>
+      <div class="dreams__item"><img src="{%static 'main/img/dreams/dream4.jpg'%}" alt="Alt"></div>
+      <div class="dreams__item"><img src="{%static 'main/img/dreams/dream5.jpg'%}" alt="Alt"></div>
+      <div class="dreams__item"><img src="{%static 'main/img/dreams/dream6.jpg'%}" alt="Alt"></div>
+
+      <div class="dreams__item"><img src="{%static 'main/img/dreams/dream1.jpg'%}" alt="Alt"></div>
+      <div class="dreams__item"><img src="{%static 'main/img/dreams/dream2.jpg'%}" alt="Alt"></div>
+      <div class="dreams__item"><img src="{%static 'main/img/dreams/dream3.jpg'%}" alt="Alt"></div>
+      <div class="dreams__item"><img src="{%static 'main/img/dreams/dream4.jpg'%}" alt="Alt"></div>
+      <div class="dreams__item"><img src="{%static 'main/img/dreams/dream5.jpg'%}" alt="Alt"></div>
+      <div class="dreams__item"><img src="{%static 'main/img/dreams/dream6.jpg'%}" alt="Alt"></div> {% endcomment %}
+    </div>
+  </body>
+</html>
